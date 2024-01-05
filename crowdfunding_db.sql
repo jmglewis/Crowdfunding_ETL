@@ -1,11 +1,11 @@
 SELECT * 
-FROM "Contacts";
+FROM "contacts";
 
 SELECT * 
-FROM "Category";
+FROM "category";
 
 SELECT * 
-FROM "SubCategory";
+FROM "subcategory";
 
 SELECT * 
-FROM "Campaign";
+FROM "campaign";
