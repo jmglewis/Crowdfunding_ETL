@@ -3,7 +3,7 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE `Campaign` (
+CREATE TABLE `campaign` (
     `cf_id` int  NOT NULL ,
     `contact_id` int  NOT NULL ,
     `company_name` varchar  NOT NULL ,
@@ -23,7 +23,7 @@ CREATE TABLE `Campaign` (
     )
 );
 
-CREATE TABLE `Category` (
+CREATE TABLE `category` (
     `category_id` varchar  NOT NULL ,
     `category` varchar  NOT NULL ,
     PRIMARY KEY (
@@ -31,7 +31,7 @@ CREATE TABLE `Category` (
     )
 );
 
-CREATE TABLE `SubCategory` (
+CREATE TABLE `subcategory` (
     `subcategory_id` varchar  NOT NULL ,
     `subcategory` varchar  NOT NULL ,
     PRIMARY KEY (
@@ -39,7 +39,7 @@ CREATE TABLE `SubCategory` (
     )
 );
 
-CREATE TABLE `Contacts` (
+CREATE TABLE `contacts` (
     `contact_id` int  NOT NULL ,
     `first_name` varchar  NOT NULL ,
     `last_name` varchar  NOT NULL ,
@@ -49,12 +49,12 @@ CREATE TABLE `Contacts` (
     )
 );
 
-ALTER TABLE `Category` ADD CONSTRAINT `fk_Category_category_id` FOREIGN KEY(`category_id`)
-REFERENCES `Campaign` (`category_id`);
+ALTER TABLE `category` ADD CONSTRAINT `fk_category_category_id` FOREIGN KEY(`category_id`)
+REFERENCES `campaign` (`category_id`);
 
-ALTER TABLE `SubCategory` ADD CONSTRAINT `fk_SubCategory_subcategory_id` FOREIGN KEY(`subcategory_id`)
-REFERENCES `Campaign` (`subcategory_id`);
+ALTER TABLE `subcategory` ADD CONSTRAINT `fk_subcategory_subcategory_id` FOREIGN KEY(`subcategory_id`)
+REFERENCES `campaign` (`subcategory_id`);
 
-ALTER TABLE `Contacts` ADD CONSTRAINT `fk_Contacts_contact_id` FOREIGN KEY(`contact_id`)
-REFERENCES `Campaign` (`contact_id`);
+ALTER TABLE `contacts` ADD CONSTRAINT `fk_contacts_contact_id` FOREIGN KEY(`contact_id`)
+REFERENCES `campaign` (`contact_id`);
 
